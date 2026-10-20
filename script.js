@@ -46,7 +46,7 @@ if(n===0){show('count','none');wish(id);return}
 var el=$('num');el.textContent=n;el.style.animation='none';void el.offsetWidth;el.style.animation='';
 n--;setTimeout(step,1000)})()}
 function wish(id){
-var lines=['Chào em','20/10 này thì chắc em được chúc xinh đẹp và vui vẻ rồi','Thôi thì, anh chúc em thành\u00a0công và mạnh\u00a0khoẻ','Cũng như tìm được người làm em cười nhiều hơn mỗi ngày nhé','Và chúc em đỗ được nguyện vọng 1 vào trường mình yêu thích nha','Gửi '+NAME+' 😸'];
+var lines=['Chào em','20/10 này thì chắc em được chúc xinh đẹp và vui vẻ rồi','Vậy thì, anh chúc em thành\u00a0công và mạnh\u00a0khoẻ','Cũng như tìm được người làm em cười nhiều hơn mỗi ngày nhé','Và chúc em đỗ được nguyện vọng 1 vào trường mình yêu thích nha','Gửi '+NAME+' 😸'];
 var p=$('wp'),k=0;show('wish','flex');
 (function next(){
 if(id!==run)return;
