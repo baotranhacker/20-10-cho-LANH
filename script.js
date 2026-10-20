@@ -13,7 +13,8 @@ if(py>H&&Math.random()>.97)cols[i]=0;else cols[i]++}}
 addEventListener('resize',size);size();setInterval(draw,70);
 
 // Music: phát file music.mp3 khi bấm nút bắt đầu
-var MUSIC_FILE='music.mp3',bgm=null,muted=false;
+var MUSIC_FILE='music.mp3',muted=false;
+var bgm=new Audio(MUSIC_FILE);bgm.loop=true;bgm.volume=.7;bgm.preload='auto'; // tải trước nhạc để bấm là phát ngay
 function startMusic(){
 $('mute').style.display='block';
 if(!bgm){bgm=new Audio(MUSIC_FILE);bgm.loop=true;bgm.volume=.7}
@@ -38,7 +39,7 @@ if(n===0){show('count','none');wish(id);return}
 var el=$('num');el.textContent=n;el.style.animation='none';void el.offsetWidth;el.style.animation='';
 n--;setTimeout(step,1000)})()}
 function wish(id){
-var lines=['Chào em','20/10 này thì chắc em được chúc xinh đẹp và vui vẻ rồi','Thôi thì, anh chúc em thành\u00a0công\u00a0và\u00a0mạnh\u00a0khoẻ','Cũng như tìm được người làm em cười nhiều hơn mỗi ngày nhé','Và chúc em đỗ được nguyện vọng 1 vào trường mình yêu thích nha','Gửi '+NAME+' 😸'];
+var lines=['Chào em','20/10 này thì chắc em được chúc xinh đẹp và vui vẻ rồi','Thôi thì, anh chúc em thành\u00a0công và mạnh\u00a0khoẻ','Cũng như tìm được người làm em cười nhiều hơn mỗi ngày nhé','Và chúc em đỗ được nguyện vọng 1 vào trường mình yêu thích nha','Gửi '+NAME+' 😸'];
 var p=$('wp'),k=0;show('wish','flex');
 (function next(){
 if(id!==run)return;
@@ -47,7 +48,7 @@ if(k===lines.length-1){setTimeout(function(){if(id!==run)return;var w=$('wish');
 k++;
 setTimeout(function(){if(id!==run)return;p.className='out';setTimeout(next,450)},k===1?1500:4000)})()}
 // Danh sach anh: them duong dan anh vao day, vi du ['photos/1.jpg','photos/2.jpg']
-var PHOTOS=['photos/1.jpg', 'photos/2.jpg', 'photos/3.jpg', 'photos/4.jpg', 'photos/5.jpg', 'photos/6.jpg', 'photos/7.jpg'];
+var PHOTOS=['photos/1.jpg', 'photos/2.jpg', 'photos/3.jpg', 'photos/4.jpg', 'photos/5.jpg', 'photos/6.jpg', 'photos/7.jpg', 'photos/8.jpg', 'photos/9.jpg'];
 function gallery(id){
 if(!PHOTOS.length)return;
 var ph=$('ph'),j=0;show('gallery','block');
