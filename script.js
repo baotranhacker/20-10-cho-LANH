@@ -27,6 +27,13 @@ if(muted){bgm.pause();this.textContent='🔇'}
 else{bgm.play();this.textContent='🔊'}
 };
 
+// Tạo khung lời chúc cuối
+var fin=document.createElement('div');fin.id='final';
+fin.style.cssText='display:none;opacity:0;transition:opacity 1.4s'; // ẩn sẵn, không phụ thuộc style.css
+var FULLNAME='Lê Anh'; // <-- sửa họ tên đầy đủ ở đây
+fin.innerHTML='<p>Chúc '+FULLNAME.replace(/ /g,'\u00a0')+'<br>20/10 vui vẻ nhé 😸</p>';
+document.querySelector('main').appendChild(fin);
+
 // 3-2-1 then wish
 var NAME='Lanh',run=0;
 function show(id,d){$(id).style.display=d}
@@ -50,10 +57,13 @@ setTimeout(function(){if(id!==run)return;p.className='out';setTimeout(next,450)}
 // Danh sach anh: them duong dan anh vao day, vi du ['photos/1.jpg','photos/2.jpg']
 var PHOTOS=['photos/1.jpg', 'photos/2.jpg', 'photos/3.jpg', 'photos/4.jpg', 'photos/5.jpg', 'photos/6.jpg', 'photos/7.jpg', 'photos/8.jpg', 'photos/9.jpg'];
 function gallery(id){
-if(!PHOTOS.length)return;
+if(!PHOTOS.length){finale();return}
 var ph=$('ph'),j=0;show('gallery','block');
 (function nx(){if(id!==run)return;
 ph.classList.remove('on');
-setTimeout(function(){if(id!==run)return;ph.onload=function(){ph.classList.add('on')};ph.src=PHOTOS[j%PHOTOS.length];j++;if(ph.complete)ph.classList.add('on');setTimeout(nx,3000)},350)})()}
+if(j>=PHOTOS.length){setTimeout(function(){if(id!==run)return;show('gallery','none');finale()},500);return}
+setTimeout(function(){if(id!==run)return;ph.onload=function(){ph.classList.add('on')};ph.src=PHOTOS[j];j++;if(ph.complete)ph.classList.add('on');setTimeout(nx,3000)},350)})()}
+// Lời chúc cuối: hiện ở giữa màn hình và giữ nguyên
+function finale(){var f=$('final');show('final','flex');void f.offsetWidth;f.style.opacity=1;f.classList.add('on')}
 $('go').onclick=begin;
 })();

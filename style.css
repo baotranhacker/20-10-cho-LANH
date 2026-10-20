@@ -26,3 +26,7 @@ button{cursor:pointer;background:linear-gradient(135deg,#ff5fa2,#ff2e7e);border:
 #wish{transition:opacity 1.2s;width:min(90vw,520px);padding:26px 16px;overflow:hidden;background:rgba(255,200,225,.1);border:2px dashed rgba(255,182,216,.55);border-radius:28px;backdrop-filter:blur(4px);font-family:"Baloo 2","Quicksand","Comic Sans MS",system-ui,sans-serif}
 #wish h2{font-size:clamp(1.8rem,7vw,2.9rem);margin:0;font-weight:700;background:linear-gradient(90deg,#ffb3d9,#ffd6a5,#ffb3d9);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 10px rgba(255,120,190,.6))}
 #wish p{text-wrap:balance;overflow-wrap:anywhere;max-width:100%;transition:opacity .4s,transform .4s;font-size:clamp(1.25rem,5.2vw,2.1rem);font-weight:600;line-height:1.5;margin:0;min-height:4.5em;display:flex;align-items:center;justify-content:center;color:#ffd9ec;text-shadow:0 0 12px rgba(255,90,170,.8),0 2px 3px rgba(60,0,30,.6)}
+
+#final{display:none;opacity:0;transition:opacity 1.4s;width:min(90vw,560px);padding:34px 18px;align-items:center;justify-content:center;border:2px dashed rgba(255,182,216,.55);border-radius:28px;background:rgba(255,200,225,.1);backdrop-filter:blur(4px);font-family:"Baloo 2","Quicksand","Comic Sans MS",system-ui,sans-serif}
+#final.on{opacity:1}
+#final p{margin:0;max-width:100%;overflow-wrap:anywhere;font-size:clamp(1.9rem,8vw,3.1rem);font-weight:700;line-height:1.4;color:#ffd9ec;text-shadow:0 0 16px rgba(255,90,170,.9),0 2px 3px rgba(60,0,30,.6)}
